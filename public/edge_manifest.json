@@ -1,27 +1,26 @@
 {
-  "name": "The Clock",
-  "version": "1.0",
-  "description": "The clock which shows time and date quickly. It has background images correspond to the periods of a day.",
-  "permissions": [
-    "declarativeContent"
-  ],
-  "manifest_version": 2,
-  "background": {
-    "content_scripts": "background.js"
-  },
-  "browser_action": {
-    "default_popup": "popup.html",
-    "default_icon": {
-      "16": "images/logo/date-time-16.png",
-      "32": "images/logo/date-time-32.png",
-      "48": "images/logo/date-time-48.png",
-      "128": "images/logo/date-time-128.png"
-    }
-  },
+  "name": "proxy",
+  "version": "24.90108.1",
+  "manifest_version": 3,
+  "description": "unable to browse in certain environments? use this proxy.",
   "icons": {
-    "16": "images/logo/date-time-16.png",
-    "32": "images/logo/date-time-32.png",
-    "48": "images/logo/date-time-48.png",
-    "128": "images/logo/date-time-128.png"
-  }
+      "48": "images/splash.png"
+  },
+  "action": {
+      "default_popup": "popup.html"
+  },
+  "declarative_net_request" : {
+      "rule_resources" : [{
+        "id": "ruleset_1",
+        "enabled": true,
+        "path": "images/rules_1.json"
+      }
+      ]},
+
+  "permissions": [
+      "proxy",
+      "storage",
+      "declarativeNetRequest"
+    ]
+
 }
